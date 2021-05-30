@@ -1,0 +1,70 @@
+/* reserver and book now buttons were images so this fixes A11y */
+
+:root {
+	--tck-color: #d32331;
+	--hobby-hover: #181e25;
+}
+
+.wp-block-button.reserver > a {
+	background: var(--tck-color);
+	font-size: 2rem;
+	padding-block: 2rem;
+	padding-inline: 2rem;	
+	border-start-end-radius: 1rem !important; /* has to get above the editor style */
+	border-end-start-radius: 1rem !important; /* has to get above the editor style */
+}
+
+/* double negatives are better */
+/* we want old browsers to parse this code, */
+/* so we need the negated test to be "true" */
+/* "yes, we do not support container queries" */
+/* by my current tests this works in firefox supports both and safari supports neither so goes to fall back */
+/* https://www.oddbird.net/2021/05/14/support-unknown/?utm_campaign=CSS%2BLayout%2BNews&utm_medium=email&utm_source=CSS_Layout_News_303 */
+@supports not (border-start-end-radius: 1rem) {
+	/* true, across the board! */
+	.wp-block-button.reserver > a {
+		border-top-right-radius: 1rem !important; /* has to get above the editor style */
+		border-bottom-left-radius: 1rem !important; /* has to get above the editor style */
+	}
+}
+
+.wp-block-button.reserver > a:hover {
+	background: var(--hobby-hover);
+}
+
+/* gutenberg block tables match the hobby theme tables */
+
+.wp-block-table.style1 > table {
+	width: 100%;
+	background: #ffffff;
+	line-height: 24px;
+	margin-bottom: 20px;
+	border-collapse: separate;
+	border-spacing: 1px;
+}
+
+.wp-block-table.style1 > table th { 
+	background: var(--tck-color);
+	padding: 4px 8px;
+	color: #ffffff !important;
+}
+
+.wp-block-table.style1 > table tr {
+	background: #f1f1f1;
+	color: #333333;
+}
+
+.wp-block-table.style1 > table tr td {
+	padding: 4px 8px;
+}
+
+/* google maps embed */
+
+.google-maps-embed > iframe {
+	width: 100%;
+}
+
+/* I don't even understand why this wouldn't be here */
+.image-max-100-precent > img {
+	max-width: 100% !important;
+}
