@@ -1,3 +1,18 @@
+/*------------------------------------*/
+	/* #ON SITE ALREADY */
+/*------------------------------------*/
+
+/* body {
+	background: papayawhip;
+} */
+
+.wrapper {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+
+
 /* reserver and book now buttons were images so this fixes A11y */
 
 :root {
@@ -67,4 +82,35 @@
 /* I don't even understand why this wouldn't be here */
 .image-max-100-precent > img {
 	max-width: 100% !important;
+}
+
+/*------------------------------------*/
+	/* #LOGO LIST */
+/*------------------------------------*/
+
+.list__logo {
+	display: flex;
+	flex-flow: row-wrap;
+	list-style: none;
+	gap: 1rem;
+	align-items: flex-end;
+}
+
+.list__logo li {
+	flex: 1 1 8rem;
+	text-align: center;
+}
+
+.list__logo--wide {
+	flex: 1 1 16rem;
+}
+
+.list__logo a svg {
+	transition: 2s;
+	border: 2px solid transparent;
+}
+
+.list__logo a:hover svg {
+	fill: var(--tck-color);
+	border: 2px solid var(--tck-color);
 }
